@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+/* global styling goes here */
+/* line 8, ../sass/match_details.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../sass/match_details.scss */
+body {
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background: #333333;
+  overflow-x: hidden;
+}
+
+/* line 21, ../sass/match_details.scss */
+.match-info {
+  display: flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+/* line 26, ../sass/match_details.scss */
+.match-info div {
+  width: 100px;
+  text-align: center;
+}
+/* line 30, ../sass/match_details.scss */
+.match-info div img {
+  height: 80px;
+  width: 80px;
+}
+/* line 35, ../sass/match_details.scss */
+.match-info div span {
+  display: block;
+  margin-top: 15px;
+}
+/* line 41, ../sass/match_details.scss */
+.match-info h6 {
+  height: 100px;
+  line-height: 100px;
+}
+
+/* line 47, ../sass/match_details.scss */
+#match-header {
+  margin-top: 15px;
+}
+/* line 50, ../sass/match_details.scss */
+#match-header h5 {
+  text-align: center;
+  margin: 0;
+}
+
+/* line 57, ../sass/match_details.scss */
+footer {
+  padding: 50px;
+  background: #0b0808;
+}
+/* line 61, ../sass/match_details.scss */
+footer h4 {
+  text-align: center;
+}
+/* line 65, ../sass/match_details.scss */
+footer h6 {
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 73, ../sass/match_details.scss */
+  html {
+    font-size: 14px;
+  }
+
+  /* line 79, ../sass/match_details.scss */
+  .match-info div {
+    width: 80px;
+    text-align: center;
+  }
+  /* line 83, ../sass/match_details.scss */
+  .match-info div img {
+    height: 60px;
+    width: 60px;
+  }
+}

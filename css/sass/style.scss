@@ -1,0 +1,292 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather'); /* global styling goes here */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  overflow-x: hidden;
+}
+
+// Header styling
+header {
+  width: 100%;
+  height: 100%;
+  /*
+  background: url("../images/ab.jpg") center;
+  background-size: cover;
+  background-attachment: fixed;
+  */
+  background: $card-color;
+
+  #content-wrapper{
+    h1{
+      margin-top: 3.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 3.5rem;
+    }
+
+    h4{
+      color: #909090;
+    }
+
+    button{
+      margin-top: 1.5rem;
+    }
+  }
+
+  #header-img-wrapper{
+    text-align: center;
+  }
+
+  nav {
+    width: 100%;
+    height: 100px;
+
+    .logo {
+      float: left;
+      display: block;
+      height: 100%;
+      width: 150px;
+      font-size: 2.5em;
+      text-align: center;
+      line-height: 100px;
+      text-decoration: none;
+      color: $secondary-color;
+      font-family: $header-ff2;
+
+      img{
+        height: 70px;
+      }
+    }
+
+    .fa {
+      display: none;
+    }
+
+    ul {
+      float: right;
+      list-style: none;
+      margin: 25px 0 0;
+      padding: 0;
+      height: 50px;
+      display: flex;
+
+      li {
+        height: 100%;
+        width: 100px;
+        position: relative;
+        margin-right: 15px;
+
+        a {
+          display: block;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          padding: 12px 15px;
+          font-size: 18px;
+          color: $text-color;
+
+          &:active,
+          &:hover,
+          &:visited {
+            text-decoration: none;
+            color: $text-color;
+          }
+        }
+
+        &:after,
+        &:before {
+          content: " ";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+
+        &:after {
+          top: 0;
+          left: 0;
+          border-left: 2px solid $secondary-color;
+          border-top: 2px solid $secondary-color;
+        }
+
+        &:before {
+          bottom: 0;
+          right: 0;
+          border-right: 2px solid $secondary-color;
+          border-bottom: 2px solid $secondary-color;
+        }
+
+        &:hover:after,
+        &:hover:before {
+          height: 30%;
+          width: 20%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+/* Section styling is here */
+
+section {
+  width: 100%;
+  padding-bottom: 50px;
+
+  .matches{
+    position: relative;
+    padding-bottom: 100px;
+
+    a{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    h1{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// active link state
+#navBar{
+  a.active:after, a.active:before{
+    content: " ";
+    position: absolute;
+    height: 30%;
+    width: 20%;
+  }
+
+  a.active:after{
+    top: 0;
+    left: 0;
+    border-left: 2px solid $secondary-color;
+    border-top: 2px solid $secondary-color;
+  }
+
+  a.active:before{
+    bottom: 0;
+    right: 0;
+    border-right: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
+  }
+}
+
+
+#results .animated:nth-child(2){
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+#results .animated:nth-child(3){
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -ms-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.score_card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: $card-color;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px grey;
+
+  .card_image {
+    width: 100px;
+    text-align: center;
+
+    img {
+      height: 80px;
+      width: 80px;
+    }
+
+    .team_name{
+      height: 50px;
+      text-align: center;
+      font-size: 16px;
+      margin: 10px 0px 0px 0px;
+    }
+
+  }
+
+  .vs {
+    height: 100px;
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 100px;
+  }
+
+  .winner{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.9em;
+  }
+}
+
+// Article styling
+
+article{
+
+}
+
+
+//footer for all pages
+
+footer{
+  padding: 30px;
+  background: $card-color;
+
+  h4{
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+
+
+// For tablets and small screen devices
+
+//------------------------------------------------------------------------------
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  header {
+    width: 100%;
+
+    #content-wrapper{
+      h1{
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+}

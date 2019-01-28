@@ -1,0 +1,162 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather'); /* global styling goes here */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  overflow-x: hidden;
+}
+
+
+//input type styling
+.match_search{
+  width: 60%;
+  margin: 40px auto;
+  position: relative;
+
+  .fa-search{
+    color: #535151;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  input{
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px 0px 10px 55px;
+    box-shadow: inset 3px 3px 8px black;
+
+    &:focus{
+      box-shadow: inset 3px 3px 12px black;
+    }
+  }
+
+}
+
+// styling results section
+
+section{
+  padding-bottom: 50px;
+}
+
+.score_card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: $card-color;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px grey;
+
+  .card_image {
+    width: 100px;
+    text-align: center;
+
+    img {
+      height: 80px;
+      width: 80px;
+    }
+
+    .team_name{
+      height: 50px;
+      text-align: center;
+      font-size: 16px;
+      margin: 10px 0px 0px 0px;
+    }
+
+  }
+
+  .vs {
+    height: 100px;
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 100px;
+  }
+
+  .winner{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.9em;
+  }
+}
+
+// Loading animation styling goes here
+
+  .loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-top: 3px solid yellow;
+    border-right: 3px solid red;
+    border-bottom: 3px solid green;
+    border-left: 3px solid blue;
+    animation: updown 1s linear infinite;
+    transform-origin: center;
+
+  }
+// animations
+
+@keyframes updown
+{
+  0%{
+    transform: rotateZ(0deg);
+  }
+
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
+
+//footer for all pages
+
+footer{
+  padding: 50px;
+  background: $card-color;
+
+  h4{
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+// For mobile
+@media screen and (max-width: 400px) {
+
+  html{
+    font-size: 14px;
+  }
+
+  .match_search{
+    width: 95%;
+  }
+}

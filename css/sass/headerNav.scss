@@ -1,0 +1,241 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather'); /* global styling goes here */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  overflow-x: hidden;
+}
+
+// active link state
+#navBar{
+  a.active:after, a.active:before{
+    content: " ";
+    position: absolute;
+    height: 30%;
+    width: 20%;
+  }
+
+  a.active:after{
+    top: 0;
+    left: 0;
+    border-left: 2px solid $secondary-color;
+    border-top: 2px solid $secondary-color;
+  }
+
+  a.active:before{
+    bottom: 0;
+    right: 0;
+    border-right: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
+  }
+}
+
+// Header styling for matches.php
+header {
+  width: 100%;
+  height: 100px;
+  background: $card-color;
+
+  nav {
+    height: 100px;
+
+    .logo {
+      float: left;
+      display: block;
+      height: 100%;
+      width: 150px;
+      text-align: center;
+      line-height: 100px;
+      text-decoration: none;
+      color: $secondary-color;
+      font-family: $header-ff2;
+
+      img{
+        height: 70px;
+      }
+    }
+
+    .fa {
+      display: none;
+    }
+
+    ul {
+      float: right;
+      list-style: none;
+      margin: 25px 0 0;
+      padding: 0;
+      height: 50px;
+      display: flex;
+
+      li {
+        height: 100%;
+        width: 100px;
+        position: relative;
+        margin-right: 15px;
+
+        a {
+          display: block;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          padding: 12px 15px;
+          font-size: 18px;
+          color: $text-color;
+
+          &:active,
+          &:hover,
+          &:visited {
+            text-decoration: none;
+            color: $text-color;
+          }
+        }
+
+        &:after,
+        &:before {
+          content: " ";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+
+        &:after {
+          top: 0;
+          left: 0;
+          border-left: 2px solid $secondary-color;
+          border-top: 2px solid $secondary-color;
+        }
+
+        &:before {
+          bottom: 0;
+          right: 0;
+          border-right: 2px solid $secondary-color;
+          border-bottom: 2px solid $secondary-color;
+        }
+
+        &:hover:after,
+        &:hover:before {
+          height: 30%;
+          width: 20%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+  header nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  header {
+    background: $primary-color;
+    height: 75px;
+
+    &:before{
+      content: none;
+    }
+
+    nav {
+      width: 100%;
+      height: 75px;
+      position: relative;
+
+      .logo {
+        width: 120px;
+        float: none;
+        line-height: 75px;
+
+        img{
+          height: 60px;
+          width: 120px;
+        }
+      }
+
+      .fa {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      ul {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        display: block;
+        float: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        background: $primary-color;
+        transition: all 0.3s;
+        animation: none;
+        z-index: 20;
+
+        li {
+          height: auto;
+          width: 100%;
+          position: static;
+          margin-right: none;
+
+          a {
+            &:hover {
+              background-color: $secondary-color;
+            }
+          }
+
+          &:after,
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  /* dynamically added classes */
+  .current{
+    height: 200px;
+  }
+
+}
+
+// For mobile
+@media screen and (max-width: 400px) {
+
+  .match_search{
+    width: 95%;
+  }
+
+  header {
+    nav{
+      background: $primary-color;
+    }
+  }
+
+}

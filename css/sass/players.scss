@@ -1,0 +1,100 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather'); /* global styling goes here */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+// active link state
+#navBar{
+  a.active:after, a.active:before{
+    content: " ";
+    position: absolute;
+    height: 30%;
+    width: 20%;
+  }
+
+  a.active:after{
+    top: 0;
+    left: 0;
+    border-left: 2px solid $secondary-color;
+    border-top: 2px solid $secondary-color;
+  }
+
+  a.active:before{
+    bottom: 0;
+    right: 0;
+    border-right: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
+  }
+}
+
+.player_search{
+  width: 60%;
+  margin: 40px auto;
+  position: relative;
+
+  .fa-search{
+    color: #535151;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  input{
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px 0px 10px 55px;
+    box-shadow: inset 3px 3px 8px black;
+
+    &:focus{
+      box-shadow: inset 3px 3px 12px black;
+    }
+  }
+
+}
+
+// footer
+footer{
+  padding: 50px;
+  background: $card-color;
+
+  h4{
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  html{
+    font-size: 14px;
+  }
+
+  .player_search{
+    width: 100%;
+  }
+}

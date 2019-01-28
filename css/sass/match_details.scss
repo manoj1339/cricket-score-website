@@ -1,0 +1,90 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+/* global styling goes here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  overflow-x: hidden;
+}
+
+.match-info{
+  display: flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+
+  div{
+    width: 100px;
+    text-align: center;
+
+    img{
+      height: 80px;
+      width: 80px;
+    }
+
+    span{
+      display: block;
+      margin-top: 15px;
+    }
+  }
+
+  h6{
+    height: 100px;
+    line-height: 100px;
+  }
+}
+
+#match-header{
+
+  margin-top: 15px;
+  h5{
+    text-align: center;
+    margin: 0;
+  }
+}
+
+//footer for all pages
+footer{
+  padding: 50px;
+  background: $card-color;
+
+  h4{
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: 500px)
+{
+  html{
+    font-size: 14px;
+  }
+
+  .match-info{
+
+    div{
+      width: 80px;
+      text-align: center;
+
+      img{
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+}

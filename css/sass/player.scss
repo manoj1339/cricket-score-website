@@ -1,0 +1,165 @@
+@import "compass";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Merriweather'); /* global styling goes here */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $body-ff;
+  background: $primary-color;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+.player-card{
+  max-width: 600px;
+  margin: 20px auto;
+  background: $card-color;
+  border-radius: 10px;
+  padding: 10px;
+
+  .player-image{
+    max-width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    &:hover #firstLabel{
+      left: 0px;
+    }
+
+    &:hover #secondLabel{
+      right: 0px;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .play-style{
+      position: absolute;
+      width: 150px;
+      text-align: center;
+      padding: 8px;
+      background: blue;
+      color: white;
+      font-family: $header-ff;
+      transition: all 0.5s;
+    }
+
+    #firstLabel{
+      top: 0;
+      left: -140px;
+      border-radius: 0px 0px 7px 0px;
+    }
+
+    #secondLabel{
+      bottom: 0;
+      right: -140px;
+      background: red;
+      border-radius: 7px 0px 0px 0px;
+    }
+  }//player-img end
+
+  .player-info{
+    ul{
+      list-style: none;
+      width: 100%;
+
+      li{
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+        .key{
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+
+        .value{
+          font-style: italic;
+        }
+      }// li end
+
+    }
+  }
+
+}//player-card end
+
+.player-stats{
+  max-width: 600px;
+  margin: 20px auto;
+  background: $card-color;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .statsBtn{
+    float:left;
+    width: 50%;
+    text-align: center;
+    padding: 8px;
+    font-size: 1rem;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+  }
+
+  .stats{
+    clear: both;
+    display: none;
+    width: 100%;
+    padding: 10px;
+  }
+}//player-stats end
+
+//table classes
+
+tr.headings{
+  font-size: 0.9rem;
+  text-align: center;
+  background: #303030;
+}
+
+tr.data{
+  font-size: 0.8rem;
+  text-align: center;
+  background: #303030;
+}
+
+// class to add in batting and bowling buttton
+.activeBtn{
+  background: $secondary-color;
+}
+
+// footer
+footer{
+  padding: 50px;
+  background: $card-color;
+
+  h4{
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  html{
+    font-size: 14px;
+  }
+}

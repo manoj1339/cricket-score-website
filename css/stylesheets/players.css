@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+/* global styling goes here */
+/* line 8, ../sass/players.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../sass/players.scss */
+body {
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background: #333333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* line 25, ../sass/players.scss */
+#navBar a.active:after, #navBar a.active:before {
+  content: " ";
+  position: absolute;
+  height: 30%;
+  width: 20%;
+}
+/* line 32, ../sass/players.scss */
+#navBar a.active:after {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #c9a819;
+  border-top: 2px solid #c9a819;
+}
+/* line 39, ../sass/players.scss */
+#navBar a.active:before {
+  bottom: 0;
+  right: 0;
+  border-right: 2px solid #c9a819;
+  border-bottom: 2px solid #c9a819;
+}
+
+/* line 47, ../sass/players.scss */
+.player_search {
+  width: 60%;
+  margin: 40px auto;
+  position: relative;
+}
+/* line 52, ../sass/players.scss */
+.player_search .fa-search {
+  color: #535151;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+/* line 60, ../sass/players.scss */
+.player_search input {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 10px 0px 10px 55px;
+  box-shadow: inset 3px 3px 8px black;
+}
+/* line 69, ../sass/players.scss */
+.player_search input:focus {
+  box-shadow: inset 3px 3px 12px black;
+}
+
+/* line 77, ../sass/players.scss */
+footer {
+  padding: 50px;
+  background: #0b0808;
+}
+/* line 81, ../sass/players.scss */
+footer h4 {
+  text-align: center;
+}
+/* line 85, ../sass/players.scss */
+footer h6 {
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (max-width: 400px) {
+  /* line 93, ../sass/players.scss */
+  html {
+    font-size: 14px;
+  }
+
+  /* line 97, ../sass/players.scss */
+  .player_search {
+    width: 100%;
+  }
+}

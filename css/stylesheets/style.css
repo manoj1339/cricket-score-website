@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+/* global styling goes here */
+/* line 8, ../sass/style.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../sass/style.scss */
+body {
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background: #333333;
+  overflow-x: hidden;
+}
+
+/* line 22, ../sass/style.scss */
+header {
+  width: 100%;
+  height: 100%;
+  /*
+  background: url("../images/ab.jpg") center;
+  background-size: cover;
+  background-attachment: fixed;
+  */
+  background: #0b0808;
+}
+/* line 33, ../sass/style.scss */
+header #content-wrapper h1 {
+  margin-top: 3.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 3.5rem;
+}
+/* line 39, ../sass/style.scss */
+header #content-wrapper h4 {
+  color: #909090;
+}
+/* line 43, ../sass/style.scss */
+header #content-wrapper button {
+  margin-top: 1.5rem;
+}
+/* line 48, ../sass/style.scss */
+header #header-img-wrapper {
+  text-align: center;
+}
+/* line 52, ../sass/style.scss */
+header nav {
+  width: 100%;
+  height: 100px;
+}
+/* line 56, ../sass/style.scss */
+header nav .logo {
+  float: left;
+  display: block;
+  height: 100%;
+  width: 150px;
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 100px;
+  text-decoration: none;
+  color: #c9a819;
+  font-family: "Shrikhand", cursive;
+}
+/* line 68, ../sass/style.scss */
+header nav .logo img {
+  height: 70px;
+}
+/* line 73, ../sass/style.scss */
+header nav .fa {
+  display: none;
+}
+/* line 77, ../sass/style.scss */
+header nav ul {
+  float: right;
+  list-style: none;
+  margin: 25px 0 0;
+  padding: 0;
+  height: 50px;
+  display: flex;
+}
+/* line 85, ../sass/style.scss */
+header nav ul li {
+  height: 100%;
+  width: 100px;
+  position: relative;
+  margin-right: 15px;
+}
+/* line 91, ../sass/style.scss */
+header nav ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 15px;
+  font-size: 18px;
+  color: #fff;
+}
+/* line 101, ../sass/style.scss */
+header nav ul li a:active, header nav ul li a:hover, header nav ul li a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 109, ../sass/style.scss */
+header nav ul li:after, header nav ul li:before {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+/* line 119, ../sass/style.scss */
+header nav ul li:after {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #c9a819;
+  border-top: 2px solid #c9a819;
+}
+/* line 126, ../sass/style.scss */
+header nav ul li:before {
+  bottom: 0;
+  right: 0;
+  border-right: 2px solid #c9a819;
+  border-bottom: 2px solid #c9a819;
+}
+/* line 133, ../sass/style.scss */
+header nav ul li:hover:after, header nav ul li:hover:before {
+  height: 30%;
+  width: 20%;
+  opacity: 1;
+}
+
+/* Section styling is here */
+/* line 147, ../sass/style.scss */
+section {
+  width: 100%;
+  padding-bottom: 50px;
+}
+/* line 151, ../sass/style.scss */
+section .matches {
+  position: relative;
+  padding-bottom: 100px;
+}
+/* line 155, ../sass/style.scss */
+section .matches a {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+/* line 161, ../sass/style.scss */
+section .matches h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 170, ../sass/style.scss */
+#navBar a.active:after, #navBar a.active:before {
+  content: " ";
+  position: absolute;
+  height: 30%;
+  width: 20%;
+}
+/* line 177, ../sass/style.scss */
+#navBar a.active:after {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #c9a819;
+  border-top: 2px solid #c9a819;
+}
+/* line 184, ../sass/style.scss */
+#navBar a.active:before {
+  bottom: 0;
+  right: 0;
+  border-right: 2px solid #c9a819;
+  border-bottom: 2px solid #c9a819;
+}
+
+/* line 193, ../sass/style.scss */
+#results .animated:nth-child(2) {
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+/* line 201, ../sass/style.scss */
+#results .animated:nth-child(3) {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -ms-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+/* line 209, ../sass/style.scss */
+.score_card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #0b0808;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px grey;
+}
+/* line 219, ../sass/style.scss */
+.score_card .card_image {
+  width: 100px;
+  text-align: center;
+}
+/* line 223, ../sass/style.scss */
+.score_card .card_image img {
+  height: 80px;
+  width: 80px;
+}
+/* line 228, ../sass/style.scss */
+.score_card .card_image .team_name {
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0px 0px 0px;
+}
+/* line 237, ../sass/style.scss */
+.score_card .vs {
+  height: 100px;
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 100px;
+}
+/* line 244, ../sass/style.scss */
+.score_card .winner {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.9em;
+}
+
+/* line 261, ../sass/style.scss */
+footer {
+  padding: 30px;
+  background: #0b0808;
+}
+/* line 265, ../sass/style.scss */
+footer h4 {
+  text-align: center;
+}
+/* line 269, ../sass/style.scss */
+footer h6 {
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  /* line 282, ../sass/style.scss */
+  header {
+    width: 100%;
+  }
+  /* line 286, ../sass/style.scss */
+  header #content-wrapper h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit|Nunito|Shrikhand");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+/* global styling goes here */
+/* line 8, ../sass/headerNav.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../sass/headerNav.scss */
+body {
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background: #333333;
+  overflow-x: hidden;
+}
+
+/* line 23, ../sass/headerNav.scss */
+#navBar a.active:after, #navBar a.active:before {
+  content: " ";
+  position: absolute;
+  height: 30%;
+  width: 20%;
+}
+/* line 30, ../sass/headerNav.scss */
+#navBar a.active:after {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #c9a819;
+  border-top: 2px solid #c9a819;
+}
+/* line 37, ../sass/headerNav.scss */
+#navBar a.active:before {
+  bottom: 0;
+  right: 0;
+  border-right: 2px solid #c9a819;
+  border-bottom: 2px solid #c9a819;
+}
+
+/* line 46, ../sass/headerNav.scss */
+header {
+  width: 100%;
+  height: 100px;
+  background: #0b0808;
+}
+/* line 51, ../sass/headerNav.scss */
+header nav {
+  height: 100px;
+}
+/* line 54, ../sass/headerNav.scss */
+header nav .logo {
+  float: left;
+  display: block;
+  height: 100%;
+  width: 150px;
+  text-align: center;
+  line-height: 100px;
+  text-decoration: none;
+  color: #c9a819;
+  font-family: "Shrikhand", cursive;
+}
+/* line 65, ../sass/headerNav.scss */
+header nav .logo img {
+  height: 70px;
+}
+/* line 70, ../sass/headerNav.scss */
+header nav .fa {
+  display: none;
+}
+/* line 74, ../sass/headerNav.scss */
+header nav ul {
+  float: right;
+  list-style: none;
+  margin: 25px 0 0;
+  padding: 0;
+  height: 50px;
+  display: flex;
+}
+/* line 82, ../sass/headerNav.scss */
+header nav ul li {
+  height: 100%;
+  width: 100px;
+  position: relative;
+  margin-right: 15px;
+}
+/* line 88, ../sass/headerNav.scss */
+header nav ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 15px;
+  font-size: 18px;
+  color: #fff;
+}
+/* line 98, ../sass/headerNav.scss */
+header nav ul li a:active, header nav ul li a:hover, header nav ul li a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 106, ../sass/headerNav.scss */
+header nav ul li:after, header nav ul li:before {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+/* line 116, ../sass/headerNav.scss */
+header nav ul li:after {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #c9a819;
+  border-top: 2px solid #c9a819;
+}
+/* line 123, ../sass/headerNav.scss */
+header nav ul li:before {
+  bottom: 0;
+  right: 0;
+  border-right: 2px solid #c9a819;
+  border-bottom: 2px solid #c9a819;
+}
+/* line 130, ../sass/headerNav.scss */
+header nav ul li:hover:after, header nav ul li:hover:before {
+  height: 30%;
+  width: 20%;
+  opacity: 1;
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+  /* line 142, ../sass/headerNav.scss */
+  header nav {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 149, ../sass/headerNav.scss */
+  header {
+    background: #333333;
+    height: 75px;
+  }
+  /* line 153, ../sass/headerNav.scss */
+  header:before {
+    content: none;
+  }
+  /* line 157, ../sass/headerNav.scss */
+  header nav {
+    width: 100%;
+    height: 75px;
+    position: relative;
+  }
+  /* line 162, ../sass/headerNav.scss */
+  header nav .logo {
+    width: 120px;
+    float: none;
+    line-height: 75px;
+  }
+  /* line 167, ../sass/headerNav.scss */
+  header nav .logo img {
+    height: 60px;
+    width: 120px;
+  }
+  /* line 173, ../sass/headerNav.scss */
+  header nav .fa {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* line 183, ../sass/headerNav.scss */
+  header nav ul {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: block;
+    float: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    background: #333333;
+    transition: all 0.3s;
+    animation: none;
+    z-index: 20;
+  }
+  /* line 200, ../sass/headerNav.scss */
+  header nav ul li {
+    height: auto;
+    width: 100%;
+    position: static;
+    margin-right: none;
+  }
+  /* line 207, ../sass/headerNav.scss */
+  header nav ul li a:hover {
+    background-color: #c9a819;
+  }
+  /* line 212, ../sass/headerNav.scss */
+  header nav ul li:after, header nav ul li:before {
+    content: none;
+  }
+
+  /* dynamically added classes */
+  /* line 222, ../sass/headerNav.scss */
+  .current {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 231, ../sass/headerNav.scss */
+  .match_search {
+    width: 95%;
+  }
+
+  /* line 236, ../sass/headerNav.scss */
+  header nav {
+    background: #333333;
+  }
+}
