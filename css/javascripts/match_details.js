@@ -59,7 +59,10 @@ function getData()
         // Each function only to get overs
         var overs = 0;
         $.each(response['data']['bowling'][index]['scores'], function(key, value){
-          overs += parseFloat(value['O']);
+          if(!isNaN(parseFloat(value['O'])))
+          {
+            overs += parseFloat(value['O']);
+          }
         });
 
 
@@ -151,7 +154,10 @@ function getData()
                    </thead>`;
 
         $.each(response['data']['bowling'][index]['scores'], function(key, value){
-          output += `
+
+          if(!isNaN(parseFloat(value['O'])))
+          {
+            output += `
             <tr>
               <td style="width:60%"><a href="player.php?q=` +value['pid']+ `">` +value['bowler']+ `</a></td>
               <td>`+value['O']+`</td>
@@ -161,6 +167,8 @@ function getData()
               <td>`+value['Econ']+`</td>
             </tr>
             `;
+          }
+
 
         });//each function ends
 
