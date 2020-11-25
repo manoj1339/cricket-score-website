@@ -1,5 +1,11 @@
 <?php
-  include_once "includes/functions.php";
+  
+  function user_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 
   if(isset($_GET['q']))
   {
