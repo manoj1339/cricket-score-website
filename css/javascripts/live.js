@@ -73,6 +73,9 @@ $(document).ready(function(){
             }
 
               $("#noOfResults").html(count);
+              if(count == 0){
+                $("#results").html("<h2>No Live match yet</h2>");
+              }
           }//success function ends here
 
 
