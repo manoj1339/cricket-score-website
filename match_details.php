@@ -1,4 +1,20 @@
+<?php
+  
+function user_input($data){
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
+if(!isset($_GET['q']))
+{
+  header('location: index.php');
+  exit();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +83,6 @@
         var minus = $('footer')[0].clientHeight + $('header')[0].clientHeight;
         var min = $(window).height()-minus;
         $('#wrapper').css('min-height', min+'px');
-        console.log($('footer')[0].clientHeight);
   });
 </script>
 </body>

@@ -76,7 +76,8 @@
 <script type="text/javascript" src="css/javascripts/matches.js"></script>
 <script>
   $(document).ready(function(){
-    var min = $(window).height()-261;
+    var minus = $('footer')[0].clientHeight + $('header')[0].clientHeight;
+    var min = $(window).height()-minus;
     $('#wrapper').css('min-height', min+'px');
   });
 </script>
