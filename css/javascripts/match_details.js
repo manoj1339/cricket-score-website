@@ -25,15 +25,19 @@ function getData()
       $('#match-header').html(`
         <div class="match-info">
           <div>
-            <img src="css/logo/`+teamOneLogo+`.png" alt="mi" />
+            <img src="css/logo/`+teamOneLogo+`.png" alt="" onerror="this.onerror=null; this.src='css/logo/default.png'" />
             <span>`+data['team-1']+`</span>
           </div>
           <h6>Vs</h6>
           <div>
-            <img src="css/logo/`+teamTwoLogo+`.png" alt="csk" />
+            <img src="css/logo/`+teamTwoLogo+`.png" alt="" onerror="this.onerror=null; this.src='css/logo/default.png'" />
             <span>`+data['team-2']+`</span>
           </div>
         </div>
+        
+        <h5 style="margin-top:30px;">Score : <span class="text-success">`+data['score']+`</span></h5>
+        <h5>Result : <span class="text-success">`+data['stat']+`</span></h5>
+      
         `);
     }
   });// first ajax end
@@ -44,12 +48,12 @@ function getData()
     success: function(response)
     {
 
-      $('#match-header').append(`
-        <h5><span class="text-warning">`+response['type']+`</span></h5>
-        <h5>Toss : <span class="text-success">`+response['data']['toss_winner_team']+`</span></h5>
-        <h5><i class="fa fa-trophy fa-1x" aria-hidden="true"></i>  <span class="text-info">`+response['data']['winner_team']+`</span></h5>
+      // $('#match-header').append(`
+      //   <h5><span class="text-warning">`+response['type']+`</span></h5>
+      //   <h5>Toss : <span class="text-success">`+response['data']['toss_winner_team']+`</span></h5>
+      //   <h5><i class="fa fa-trophy fa-1x" aria-hidden="true"></i>  <span class="text-info">`+response['data']['winner_team']+`</span></h5>
 
-        `);
+      //   `);
 
 
       var output = ``;
@@ -90,7 +94,7 @@ function getData()
         $.each(response['data']['batting'][index]['scores'], function(key, value){
 
 
-          if(value['dismissal'] != 'not out')
+          if(value['dismissal'] != 'not out' &&  value['dismissal'] != '')
           {
             wickets += 1;
           }
@@ -100,11 +104,11 @@ function getData()
             var parts = value['detail'].split(" ");
             totalScore = totalScore + parseInt(parts[0]);
 
-            output +=`
-              <tr>
-                <td colspan=1>`+value['batsman']+`</td>
-                <td colspan=5>`+value['detail']+`</td>
-              </tr>`;
+            // output +=`
+            //   <tr>
+            //     <td colspan=1>`+value['batsman']+`</td>
+            //     <td colspan=5>`+value['detail']+`</td>
+            //   </tr>`;
           }
           else
           {
@@ -127,11 +131,11 @@ function getData()
 
 
 
-        output += `
-          <tr>
-            <td colspan=1>Total</td>
-            <td colspan=5>` +totalScore+ ` / ` +(wickets-1)+ ` (`+overs+`)</td>
-          </tr>`;
+        // output += `
+        //   <tr>
+        //     <td colspan=1>Total</td>
+        //     <td colspan=5>` +totalScore+ ` / ` +(wickets-1)+ ` (`+overs+`)</td>
+        //   </tr>`;
 
         output += `</table></div>`;
 

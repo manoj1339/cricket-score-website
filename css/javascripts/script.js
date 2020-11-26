@@ -44,12 +44,12 @@ $(document).ready(function() {
                   <div class="col-md-6 col-lg-4">
                     <div class="score_card">
                       <div class="card_image">
-                        <img src="css/logo/`+teamOneLogo+`.png" alt="team_Logo" />
+                        <img src="css/logo/`+teamOneLogo+`.png" alt="team_Logo" onerror="this.onerror=null; this.src='css/logo/default.png'"  />
                         <div class="team_name">`+response['matches'][i]['team-1']+`</div>
                       </div>
                       <div class="vs">VS</div>
                       <div class="card_image">
-                        <img src="css/logo/`+teamTwoLogo+`.png" alt="team_Logo" />
+                        <img src="css/logo/`+teamTwoLogo+`.png" alt="team_Logo" onerror="this.onerror=null; this.src='css/logo/default.png'"  />
                         <div class="team_name">`+response['matches'][i]['team-2']+`</div>
                       </div>
                       <div class="winner"><i class="fa fa-trophy fa-1x" aria-hidden="true"></i>  <span class="text-warning">`+response['matches'][i]['winner_team']+`</span><br/>
@@ -99,12 +99,12 @@ $(document).ready(function() {
                     <div class="col-md-6 col-lg-4">
                       <div class="score_card">
                         <div class="card_image">
-                          <img src="css/logo/`+teamOneLogo+`.png" alt="team_Logo" />
+                          <img src="css/logo/`+teamOneLogo+`.png" alt="team_Logo" onerror="this.onerror=null; this.src='css/logo/default.png'"  />
                           <div class="team_name">`+response['matches'][i]['team-1']+`</div>
                         </div>
                         <div class="vs">VS</div>
                         <div class="card_image">
-                          <img src="css/logo/`+teamTwoLogo+`.png" alt="team_Logo" />
+                          <img src="css/logo/`+teamTwoLogo+`.png" alt="team_Logo" onerror="this.onerror=null; this.src='css/logo/default.png'"  />
                           <div class="team_name">`+response['matches'][i]['team-2']+`</div>
                         </div>
                         <div class="winner">
